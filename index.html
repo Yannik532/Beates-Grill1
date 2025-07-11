@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beate's Grill in Lünen - Ihr Imbiss für Currywurst, Jägerschnitzel, Gyros und mehr. Frisch zubereitet, faire Preise, freundlicher Service.">
+  <meta name="keywords" content="Imbiss Lünen, Currywurst, Jägerschnitzel, Gyros, Beate's Grill, Bebelstraße">
+  <meta name="author" content="Beate's Grill">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beate's Grill - Imbiss in Lünen">
+  <meta property="og:description" content="Imbisskultur in Lünen – seit Jahren beliebt für Currywurst, Gyros & mehr.">
+  <meta property="og:image" content="img/optimized/hero.jpg">
+  
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Beate's Grill - Imbiss in Lünen">
+  <meta property="twitter:description" content="Imbisskultur in Lünen – seit Jahren beliebt für Currywurst, Gyros & mehr.">
+  
+  <title>Beate's Grill - Imbiss in Lünen | Currywurst, Jägerschnitzel & mehr</title>
+
+  <link rel="preload" href="css/beate-styles.css" as="style">
+  <link rel="preload" href="img/optimized/hero.jpg" as="image">
+  <link rel="preload" href="img/optimized/Tisch.jpg" as="image">
+  <link rel="preload" href="img/optimized/Currywurst.jpg" as="image">
+  
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//www.google.com">
+  
+  <!-- Lokale Schriftarten und Styles -->
+  <link rel="stylesheet" href="css/local-fonts.css">
+  <link rel="stylesheet" href="css/beate-styles.css">
+  <link rel="stylesheet" href="css/cookie-consent.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Beate's Grill",
+    "image": "img/optimized/hero.jpg",
+    "description": "Imbiss in Lünen für Currywurst, Jägerschnitzel, Gyros und mehr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bebelstraße 66",
+      "addressLocality": "Lünen",
+      "postalCode": "44532",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 2306 14619",
+    "openingHours": [
+      "Mo 12:00-20:00",
+      "We 12:00-20:00", 
+      "Th 12:00-20:00",
+      "Fr 12:00-20:00",
+      "Sa 12:00-20:00",
+      "Su 12:00-20:00"
+    ],
+    "servesCuisine": "German",
+    "priceRange": "€"
+  }
+  </script>
+
+</head>
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__logo-section">
+        <a href="index.html" class="logo-elegant">Beate's Grill</a>
+        <div class="header__status" id="headerStatus">
+          <div class="header__status-dot" id="headerStatusDot"></div>
+          <span class="header__status-text" id="headerStatusText">Wird geladen...</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#home" class="nav__link nav__link--active">Home</a>
+        <a href="speisekarte.html" class="nav__link">Speisekarte</a>
+        <a href="gesellschaftsraum.html" class="nav__link">Gesellschaftsraum</a>
+        <a href="kontakt.html" class="nav__link">Kontakt</a>
+      </nav>
+      <button class="btn btn--menu" onclick="toggleMobileMenu()" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <nav class="nav--mobile" id="mobileNav">
+    <button class="btn btn--close" onclick="toggleMobileMenu()" aria-label="Menü schließen">✕</button>
+    <a href="#home" class="nav__link nav__link--active" onclick="toggleMobileMenu()">Home</a>
+    <a href="speisekarte.html" class="nav__link" onclick="toggleMobileMenu()">Speisekarte</a>
+    <a href="gesellschaftsraum.html" class="nav__link" onclick="toggleMobileMenu()">Gesellschaftsraum</a>
+    <a href="kontakt.html" class="nav__link" onclick="toggleMobileMenu()">Kontakt</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">Beate's Grill</h1>
+      <p class="hero__subtitle">Imbisskultur der Extraklasse</p>
+      <p class="hero__description">
+        Erleben Sie authentische deutsche Imbissküche in stilvollem Ambiente. 
+        Von der klassischen Currywurst bis zum perfekten Jägerschnitzel – 
+        bei uns wird Tradition mit Leidenschaft zelebriert.
+      </p>
+      <a href="speisekarte.html" class="btn btn--primary">Unsere Speisekarte</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2 class="section__title fade-in">Über Beate's Grill</h2>
+      <div class="about__grid">
+        <div class="about__text fade-in">
+          <h3 class="about__heading">Tradition trifft Qualität</h3>
+          <p class="about__paragraph">
+            Seit Jahren steht Beate's Grill für ehrliche Imbissküche und freundlichen Service in Lünen. 
+            Wir verwenden nur die besten Zutaten und bereiten alles frisch für Sie zu.
+          </p>
+          <p class="about__paragraph">
+            Unser Geheimnis? Leidenschaft für gutes Essen, faire Preise und die Liebe zum Detail. 
+            Ob Currywurst, Jägerschnitzel oder Gyros – bei uns schmeckt es wie zu Hause.
+          </p>
+        </div>
+        <div class="about__image fade-in">
+          <img src="img/optimized/Tisch.jpg" 
+               srcset="img/optimized/Tisch.jpg 1200w, img/Tisch.jpg 1600w" 
+               sizes="(max-width: 768px) 100vw, 1200px" 
+               alt="Beate's Grill Innenansicht" loading="lazy" decoding="async" 
+               width="1200" height="800" 
+               onerror="this.onerror=null; this.src='img/Tisch.jpg'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specialties">
+    <div class="container">
+      <h2 class="section__title fade-in">Unsere Spezialitäten</h2>
+      
+      <div class="slider fade-in">
+        <div class="slider__wrapper" id="sliderWrapper">
+          <div class="slider__slide">
+            <img src="img/optimized/Currywurst.jpg" 
+                 srcset="img/optimized/Currywurst.jpg 800w, img/Currywurst.jpg 1024w" 
+                 sizes="(max-width: 768px) 100vw, 800px" 
+                 alt="Currywurst" class="slider__image" loading="eager" decoding="async" 
+                 width="800" height="800" 
+                 onerror="this.onerror=null; this.src='img/Currywurst.jpg'">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h3 class="slider__title">Currywurst</h3>
+              <p class="slider__description">Die Königin der deutschen Imbissküche – mit unserer hausgemachten Currysoße</p>
+              <a href="speisekarte.html" class="btn btn--secondary">Zur Speisekarte</a>
+            </div>
+          </div>
+          
+          <div class="slider__slide">
+            <img src="img/optimized/Jägerschnitzel_1.jpg" 
+                 srcset="img/optimized/Jägerschnitzel_1.jpg 800w, img/Jägerschnitzel_1.jpg 1024w" 
+                 sizes="(max-width: 768px) 100vw, 800px" 
+                 alt="Jägerschnitzel" class="slider__image" loading="lazy" decoding="async" 
+                 width="800" height="800" 
+                 onerror="this.onerror=null; this.src='img/Jägerschnitzel_1.jpg'">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h3 class="slider__title">Jägerschnitzel</h3>
+              <p class="slider__description">Zart paniert und mit unserer berühmten Jägersoße – ein Gedicht für den Gaumen</p>
+              <a href="speisekarte.html" class="btn btn--secondary">Zur Speisekarte</a>
+            </div>
+          </div>
+          
+          <div class="slider__slide">
+            <img src="img/optimized/Gyros.jpg" 
+                 srcset="img/optimized/Gyros.jpg 800w, img/Gyros.jpg 1024w" 
+                 sizes="(max-width: 768px) 100vw, 800px" 
+                 alt="Gyros" class="slider__image" loading="lazy" decoding="async" 
+                 width="800" height="800" 
+                 onerror="this.onerror=null; this.src='img/Gyros.jpg'">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h3 class="slider__title">Gyros</h3>
+              <p class="slider__description">Authentisch griechisch gewürzt und frisch vom Spieß geschnitten</p>
+              <a href="speisekarte.html" class="btn btn--secondary">Zur Speisekarte</a>
+            </div>
+          </div>
+          
+          <div class="slider__slide">
+            <img src="img/optimized/Schaschlik.jpg" 
+                 srcset="img/optimized/Schaschlik.jpg 800w, img/Schaschlik.jpg 1024w" 
+                 sizes="(max-width: 768px) 100vw, 800px" 
+                 alt="Schaschlik" class="slider__image" loading="lazy" decoding="async" 
+                 width="800" height="800" 
+                 onerror="this.onerror=null; this.src='img/Schaschlik.jpg'">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h3 class="slider__title">Schaschlik</h3>
+              <p class="slider__description">Herzhaft, würzig und zart – unser Schaschlik ist ein echter Klassiker vom Grill</p>
+              <a href="speisekarte.html" class="btn btn--secondary">Zur Speisekarte</a>
+            </div>
+          </div>
+        </div>
+        
+        <button class="slider__nav slider__nav--prev" onclick="changeSlide(-1)" aria-label="Vorheriges Gericht">‹</button>
+        <button class="slider__nav slider__nav--next" onclick="changeSlide(1)" aria-label="Nächstes Gericht">›</button>
+      </div>
+      
+      <div class="slider__dots">
+        <button class="slider__dot slider__dot--active" onclick="currentSlide(1)" aria-label="Slide 1"></button>
+        <button class="slider__dot" onclick="currentSlide(2)" aria-label="Slide 2"></button>
+        <button class="slider__dot" onclick="currentSlide(3)" aria-label="Slide 3"></button>
+        <button class="slider__dot" onclick="currentSlide(4)" aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2 class="section__title fade-in">Besuchen Sie uns</h2>
+      <div class="contact__grid">
+        <div class="contact__info fade-in">
+          <h3 class="contact__heading">Kontakt</h3>
+          <div class="contact__item">
+            <span class="contact__icon">📍</span>
+            <span class="contact__text">Bebelstraße 66, 44532 Lünen</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">📞</span>
+            <span class="contact__text">+49 2306 14619</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">✉️</span>
+            <span class="contact__text">info@beates-grill.de</span>
+          </div>
+        </div>
+        <div class="hours fade-in">
+          <h3 class="hours__heading">Öffnungszeiten</h3>
+          <div class="hours__item">
+            <span class="hours__day">Montag</span>
+            <span class="hours__time">12:00 - 20:00</span>
+          </div>
+          <div class="hours__item">
+            <span class="hours__day">Dienstag</span>
+            <span class="hours__time">Geschlossen</span>
+          </div>
+          <div class="hours__item">
+            <span class="hours__day">Mittwoch - Sonntag</span>
+            <span class="hours__time">12:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="location fade-in">
+        <h3 class="location__heading">So finden Sie uns</h3>
+        <div class="location__map">
+          <div class="location__map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2467.456789!2d7.5293512!3d51.6020308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDM2JzA3LjMiTiA3wrAzMSc0NS43IkU!5e0!3m2!1sde!2sde!4v1703123456789!5m2!1sde!2sde"
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius: 12px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Karte mit Standort von Beate's Grill"
+              aria-label="Interaktive Karte zeigt den Standort von Beate's Grill in der Bebelstraße 66, Lünen">
+            </iframe>
+          </div>
+          <p class="location__info">360° Straßenansicht - So sieht unser Restaurant von außen aus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__section">
+          <h3 class="footer__heading">Kontakt</h3>
+          <div class="footer__contact">
+            <p class="footer__text"><strong>Beate's Grill</strong></p>
+            <p class="footer__text">Bebelstraße 66<br>44532 Lünen</p>
+            <p class="footer__text">Tel: <a href="tel:+49230614619">+49 2306 14619</a></p>
+            <p class="footer__text">E-Mail: <a href="mailto:info@beates-grill.de">info@beates-grill.de</a></p>
+            <p class="footer__text">Web: <a href="http://beates-grill.de" target="_blank" rel="noopener">beates-grill.de</a></p>
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <h3 class="footer__heading">Öffnungszeiten</h3>
+          <div class="footer__hours">
+            <p class="footer__text"><span>Montag:</span> 12:00 - 20:00 Uhr</p>
+            <p class="footer__text"><span>Dienstag:</span> <strong>Geschlossen</strong></p>
+            <p class="footer__text"><span>Mittwoch - Sonntag:</span> 12:00 - 20:00 Uhr</p>
+            <p class="footer__text footer__text--note">An Feiertagen gelten Sonderöffnungszeiten</p>
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <h3 class="footer__heading">Service</h3>
+          <nav class="footer__nav">
+            <a href="impressum.html" class="footer__link">Impressum</a>
+            <a href="datenschutz.html" class="footer__link">Datenschutz</a>
+            <a href="agb.html" class="footer__link">AGB</a>
+            <a href="#" id="open-cookie-settings" class="footer__link">Cookie-Einstellungen</a>
+          </nav>
+          <div class="footer__info">
+            <p class="footer__text">✅ Alle Preise inkl. MwSt.</p>
+            <p class="footer__text">🚗 Parkplätze vorhanden</p>
+            <p class="footer__text">📞 Telefonische Bestellungen möglich</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__text">&copy; 2025 Beate's Grill. Alle Rechte vorbehalten.</p>
+        <p class="footer__text">Preisänderungen vorbehalten • Stand: Januar 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/beate-app.js"></script>
+  
+  <!-- DSGVO Cookie Consent -->
+  <script src="js/cookie-consent.js"></script>
+  <script>
+    class ModernNavigation {
+      constructor() {
+        this.header = document.querySelector('.header');
+        this.lastScrollY = window.scrollY;
+        this.init();
+      }
+      init() {
+        window.addEventListener('scroll', () => this.handleScroll());
+      }
+      handleScroll() {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 100) {
+          this.header.classList.add('scrolled');
+        } else {
+          this.header.classList.remove('scrolled');
+        }
+        if (currentScrollY > this.lastScrollY && currentScrollY > 200) {
+          this.header.classList.add('hidden');
+        } else {
+          this.header.classList.remove('hidden');
+        }
+        this.lastScrollY = currentScrollY;
+      }
+    }
+    new ModernNavigation();
+  </script>
+</body>
+</html>

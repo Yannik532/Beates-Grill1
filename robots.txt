@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://beates-grill.de/sitemap.xml
+
+# Crawl-delay für bessere Performance
+Crawl-delay: 1 

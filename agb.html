@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Allgemeine Geschäftsbedingungen von Beate's Grill - Rechtliche Bedingungen für Bestellungen und Services." />
+  <title>AGB | Beate's Grill</title>
+  
+  <!-- Lokale CSS ohne externe Abhängigkeiten -->
+  <link rel="stylesheet" href="css/local-fonts.css" />
+  <link rel="stylesheet" href="css/beate-styles.css" />
+  <link rel="stylesheet" href="css/cookie-consent.css" />
+  
+  <style>
+    :root {
+      --primary-gold: #FF8C00;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --text-light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--darker-bg);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary-gold);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-gold);
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: var(--primary-gold);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p, li {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background: rgba(255, 140, 0, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-gold);
+      margin: 1rem 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: #FF8C00 !important;
+      color: #1a1a1a !important;
+      padding: 1.2rem 2.5rem;
+      text-decoration: none !important;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      margin: 3rem 0 2rem 0;
+      transition: all 0.3s ease;
+      text-align: center;
+      min-width: 200px;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+      border: none !important;
+    }
+
+    .back-link:hover {
+      background: #FFA500 !important;
+      color: #1a1a1a !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+      text-decoration: none !important;
+    }
+
+    .contact-info {
+      background: rgba(255, 140, 0, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+    /* Logo Section */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(255, 140, 0, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    .header-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .header-status-dot.open {
+      background: #4CAF50;
+    }
+
+    .header-status-dot.closed {
+      background: #f44336;
+    }
+
+    .header-status-text {
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .header-status-text.open {
+      color: #4CAF50;
+    }
+
+    .header-status-text.closed {
+      color: #f44336;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+
+    /* Header Navigation */
+    .elegant-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo-elegant {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-elegant {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-elegant a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-elegant a:hover,
+    .nav-elegant a.active {
+      color: var(--primary-gold);
+    }
+
+    .nav-elegant a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-elegant a:hover::after,
+    .nav-elegant a.active::after {
+      width: 100%;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary-gold);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(26, 26, 26, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      background: var(--primary-gold);
+      color: var(--dark-bg);
+      transform: scale(1.05);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: var(--primary-gold);
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-elegant {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .header-content {
+        padding: 0 1rem;
+      }
+
+      .header-status-indicator {
+        display: none;
+      }
+    }
+
+    /* Back Button */
+    .back-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--primary-gold);
+      color: var(--dark-bg);
+      padding: 1rem 1.5rem;
+      border-radius: 0 0 20px 0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background: #FFA500;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+    }
+
+    .back-button::before {
+      content: '←';
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    main {
+      margin-top: 100px;
+    }
+
+    /* Footer Styles */
+    .footer-elegant {
+      background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    .container-elegant {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .footer-contact p,
+    .opening-hours p {
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact a,
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover,
+    .footer-links a:hover {
+      color: var(--primary-gold);
+    }
+
+    .opening-hours span {
+      color: var(--primary-gold);
+      font-weight: 500;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-info p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 140, 0, 0.2);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .footer-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main style="margin-top: 2rem;">
+  <div class="container">
+    <h1>Allgemeine Geschäftsbedingungen</h1>
+    
+    <a href="index.html" class="back-button">Zurück</a>
+    
+    <div class="contact-info">
+      <h3>Betreiber:</h3>
+      <p><strong>Dariuz Goniszewski</strong><br>
+      Einzelunternehmen<br>
+      Bebelstraße 66, 44532 Lünen<br>
+      Telefon: +49 2306 14619<br>
+      E-Mail: info@beates-grill.de</p>
+    </div>
+
+    <h2>§ 1 Geltungsbereich</h2>
+    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Beate's Grill und unseren Kunden. Dies umfasst:</p>
+    <ul>
+      <li>Speisen- und Getränkebestellungen vor Ort</li>
+      <li>Telefonische Bestellungen zur Abholung</li>
+      <li>Nutzung unseres Gesellschaftsraums</li>
+      <li>Catering-Services (falls angeboten)</li>
+    </ul>
+
+    <h2>§ 2 Vertragsabschluss</h2>
+    <h3>2.1 Bestellungen vor Ort</h3>
+    <p>Der Vertrag kommt durch mündliche Bestellung und Annahme durch unser Personal zustande. Die Zahlung erfolgt nach Erhalt der Speisen und Getränke.</p>
+    
+    <h3>2.2 Telefonische Bestellungen</h3>
+    <p>Der Vertrag kommt durch telefonische Bestellung und unsere Bestätigung zustande. Abholung erfolgt zu dem vereinbarten Zeitpunkt. Zahlung erfolgt bei Abholung.</p>
+
+    <h2>§ 3 Preise und Zahlung</h2>
+    <ul>
+      <li>Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer</li>
+      <li>Preisänderungen bleiben vorbehalten</li>
+      <li>Zahlung erfolgt wahlweise in bar oder per EC-Karte</li>
+      <li>Bei telefonischen Bestellungen ist die Zahlung bei Abholung fällig</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Wichtig:</strong> Bei Nichtabholung telefonischer Bestellungen nach 30 Minuten behalten wir uns vor, die Bestellung zu stornieren.
+    </div>
+
+    <h2>§ 4 Gesellschaftsraum</h2>
+    <h3>4.1 Buchung</h3>
+    <p>Die Buchung unseres Gesellschaftsraums erfolgt nach vorheriger Absprache. Eine Reservierung ist erst nach unserer schriftlichen oder mündlichen Bestätigung verbindlich.</p>
+    
+    <h3>4.2 Stornierung</h3>
+    <ul>
+      <li>Kostenlose Stornierung bis 48 Stunden vor der Veranstaltung</li>
+      <li>Bei kurzfristigerer Stornierung behalten wir uns vor, angefallene Kosten zu berechnen</li>
+    </ul>
+
+    <h3>4.3 Hausregeln</h3>
+    <ul>
+      <li>Das Rauchen ist nur in den dafür vorgesehenen Bereichen gestattet</li>
+      <li>Mitgebrachte Speisen und Getränke sind nicht gestattet</li>
+      <li>Die Räumlichkeiten sind pfleglich zu behandeln</li>
+      <li>Bei Beschädigungen ist der Mieter zum Schadenersatz verpflichtet</li>
+    </ul>
+
+    <h2>§ 5 Qualität und Reklamationen</h2>
+    <p>Wir bemühen uns um höchste Qualität unserer Speisen und Getränke. Reklamationen nehmen wir gerne entgegen und bemühen uns um eine kulante Lösung.</p>
+    
+    <ul>
+      <li>Reklamationen sind unverzüglich, spätestens vor Verlassen des Lokals, anzuzeigen</li>
+      <li>Bei berechtigten Reklamationen ersetzen wir die Speise oder erstatten den Kaufpreis</li>
+      <li>Weitergehende Ansprüche sind ausgeschlossen, soweit gesetzlich zulässig</li>
+    </ul>
+
+    <h2>§ 6 Öffnungszeiten</h2>
+    <div class="highlight">
+      <p><strong>Reguläre Öffnungszeiten:</strong></p>
+      <ul>
+        <li>Montag: 12:00 - 20:00 Uhr</li>
+        <li>Dienstag: Geschlossen</li>
+        <li>Mittwoch - Sonntag: 12:00 - 20:00 Uhr</li>
+      </ul>
+      <p>An Feiertagen gelten Sonderöffnungszeiten. Änderungen behalten wir uns vor.</p>
+    </div>
+
+    <h2>§ 7 Haftung</h2>
+    <h3>7.1 Haftungsausschluss</h3>
+    <p>Unsere Haftung ist auf Vorsatz und grobe Fahrlässigkeit beschränkt. Dies gilt nicht für:</p>
+    <ul>
+      <li>Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit</li>
+      <li>Schäden aus der Verletzung wesentlicher Vertragspflichten</li>
+      <li>Ansprüche nach dem Produkthaftungsgesetz</li>
+    </ul>
+
+    <h3>7.2 Allergene und Unverträglichkeiten</h3>
+    <p>Informationen zu Allergenen erhalten Sie auf Nachfrage bei unserem Personal. Bei bekannten Allergien oder Unverträglichkeiten informieren Sie uns bitte vor der Bestellung.</p>
+
+    <h2>§ 8 Hausrecht</h2>
+    <p>Wir behalten uns das Hausrecht vor. Bei Störungen, unsittlichem Verhalten oder Belästigung anderer Gäste können wir Personen des Lokals verweisen.</p>
+
+    <h2>§ 9 Datenschutz</h2>
+    <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Einzelheiten entnehmen Sie bitte unserer <a href="datenschutz.html" style="color: var(--primary-gold);">Datenschutzerklärung</a>.</p>
+
+    <h2>§ 10 Streitbeilegung</h2>
+    <p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h2>§ 11 Schlussbestimmungen</h2>
+    <h3>11.1 Änderungen</h3>
+    <p>Änderungen dieser AGB werden den Kunden in geeigneter Weise mitgeteilt.</p>
+
+    <h3>11.2 Salvatorische Klausel</h3>
+    <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt.</p>
+
+    <h3>11.3 Anwendbares Recht</h3>
+    <p>Es gilt ausschließlich deutsches Recht unter Ausschluss des UN-Kaufrechts.</p>
+
+    <h3>11.4 Gerichtsstand</h3>
+    <p>Gerichtsstand ist Lünen, soweit gesetzlich zulässig.</p>
+
+    <div class="highlight">
+      <p><strong>Stand:</strong> Januar 2025<br>
+      <strong>Version:</strong> 1.0</p>
+    </div>
+
+    <a href="index.html" class="back-link">Zurück zur Startseite</a>
+  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-elegant">
+    <div class="container-elegant">
+      <div class="footer-grid">
+        <!-- Kontakt -->
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <div class="footer-contact">
+            <p><strong>Beate's Grill</strong></p>
+            <p>Bebelstraße 66<br>44532 Lünen</p>
+            <p>Tel: <a href="tel:+49230614619">+49 2306 14619</a></p>
+            <p>E-Mail: <a href="mailto:info@beates-grill.de">info@beates-grill.de</a></p>
+            <p>Web: <a href="http://beates-grill.de" target="_blank" rel="noopener">beates-grill.de</a></p>
+          </div>
+        </div>
+
+        <!-- Öffnungszeiten -->
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <div class="opening-hours">
+            <p><span>Montag:</span> 12:00 - 20:00 Uhr</p>
+            <p><span>Dienstag:</span> <strong>Geschlossen</strong></p>
+            <p><span>Mittwoch - Sonntag:</span> 12:00 - 20:00 Uhr</p>
+            <p class="holiday-note">An Feiertagen gelten Sonderöffnungszeiten</p>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="footer-section">
+          <h3>Service</h3>
+          <nav class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html" aria-current="page">AGB</a>
+            <a href="#" id="open-cookie-settings">Cookie-Einstellungen</a>
+          </nav>
+          <div class="footer-info">
+            <p>✅ Alle Preise inkl. MwSt.</p>
+            <p>🚗 Parkplätze vorhanden</p>
+            <p>📞 Telefonische Bestellungen möglich</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Beate's Grill. Alle Rechte vorbehalten.</p>
+        <p>Preisänderungen vorbehalten • Stand: Januar 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DSGVO Cookie Consent -->
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html> 

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Impressum von Beate's Grill - Rechtliche Angaben und Kontaktdaten des Imbiss in Lünen." />
+  <title>Impressum | Beate's Grill</title>
+  
+  <!-- Lokale CSS ohne externe Abhängigkeiten -->
+  <link rel="stylesheet" href="css/local-fonts.css" />
+  <link rel="stylesheet" href="css/beate-styles.css" />
+  <link rel="stylesheet" href="css/cookie-consent.css" />
+  
+  <style>
+    :root {
+      --primary-gold: #FF8C00;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --text-light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .main-content {
+      padding: 4rem 0;
+      background: var(--darker-bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--primary-gold);
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-gold);
+    }
+
+    .impressum-content {
+      background: var(--dark-bg);
+      padding: 3rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .impressum-content p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .impressum-content strong {
+      color: var(--primary-gold);
+    }
+
+    .impressum-content a {
+      color: var(--primary-gold);
+      text-decoration: none;
+    }
+
+    .impressum-content a:hover {
+      color: #FFA500;
+    }
+
+    .contact-info {
+      background: rgba(255, 140, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--primary-gold);
+    }
+
+
+
+    /* Footer */
+    .footer-elegant {
+      background: var(--darker-bg);
+      padding: 4rem 0 1rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    .container-elegant {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--primary-gold);
+    }
+
+    .footer-contact p,
+    .opening-hours p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact strong {
+      color: var(--primary-gold);
+    }
+
+    .footer-contact a,
+    .footer-bottom a {
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover,
+    .footer-bottom a:hover {
+      color: #FFA500;
+    }
+
+    .opening-hours span {
+      font-weight: 600;
+      color: var(--primary-gold);
+      display: inline-block;
+      min-width: 120px;
+    }
+
+    .holiday-note {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-gold);
+    }
+
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0.3rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--primary-gold);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+
+    .footer-info p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.1);
+      color: rgba(245, 245, 245, 0.7);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: #FF8C00 !important;
+      color: #1a1a1a !important;
+      padding: 1.2rem 2.5rem;
+      text-decoration: none !important;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      margin: 3rem 0 2rem 0;
+      transition: all 0.3s ease;
+      text-align: center;
+      min-width: 200px;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+      border: none !important;
+    }
+
+    .back-link:hover {
+      background: #FFA500 !important;
+      color: #1a1a1a !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+      text-decoration: none !important;
+    }
+
+    /* Back Button */
+    .back-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--primary-gold);
+      color: var(--dark-bg);
+      padding: 1rem 1.5rem;
+      border-radius: 0 0 20px 0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background: #FFA500;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+    }
+
+    .back-button::before {
+      content: '←';
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .impressum-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.3rem;
+      }
+
+      .opening-hours span {
+        min-width: 100px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        text-align: center;
+      }
+
+      .footer-contact {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Content -->
+  <main class="main-content" style="padding-top: 2rem;">
+    <div class="container">
+      <h1 class="page-title">Impressum</h1>
+      
+      <a href="index.html" class="back-button">Zurück</a>
+      
+      <div class="impressum-content">
+        <h2 class="section-title">Angaben gemäß § 5 TMG</h2>
+        
+        <div class="contact-info">
+          <p><strong>Betreiber:</strong></p>
+          <p><strong>Dariuz Goniszewski</strong><br>
+          Einzelunternehmen</p>
+          
+          <p><strong>Anschrift:</strong></p>
+          <p>Bebelstraße 66<br>
+          44532 Lünen<br>
+          Deutschland</p>
+          
+          <p><strong>Kontakt:</strong></p>
+          <p>Telefon: <a href="tel:+49230614619">+49 2306 14619</a><br>
+          E-Mail: <a href="mailto:info@beates-grill.de">info@beates-grill.de</a></p>
+        </div>
+
+        <h2 class="section-title">Weitere Angaben</h2>
+        
+        <p><strong>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:</strong><br>
+        DE987654321</p>
+        
+        <p><strong>Steuernummer:</strong><br>
+        315/123/45678</p>
+        
+        <p><strong>Zuständige Aufsichtsbehörde:</strong><br>
+        Stadt Lünen - Ordnungsamt<br>
+        Willy-Brandt-Platz 1<br>
+        44532 Lünen</p>
+
+        <h2 class="section-title">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p><strong>Dariuz Goniszewski</strong><br>
+        Bebelstraße 66<br>
+        44532 Lünen</p>
+
+        <h2 class="section-title">Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+        
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+        Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h2 class="section-title">Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
+        allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht 
+        unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
+        Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+        <h2 class="section-title">Haftung für Links</h2>
+        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. 
+        Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten 
+        Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+        <h2 class="section-title">Urheberrecht</h2>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
+        Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der 
+        Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+        <a href="index.html" class="back-link">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-elegant">
+    <div class="container-elegant">
+      <div class="footer-grid">
+        <!-- Kontakt -->
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <div class="footer-contact">
+            <p><strong>Beate's Grill</strong></p>
+            <p>Bebelstraße 66<br>44532 Lünen</p>
+            <p>Tel: <a href="tel:+49230614619">+49 2306 14619</a></p>
+            <p>E-Mail: <a href="mailto:info@beates-grill.de">info@beates-grill.de</a></p>
+            <p>Web: <a href="http://beates-grill.de" target="_blank" rel="noopener">beates-grill.de</a></p>
+          </div>
+        </div>
+
+        <!-- Öffnungszeiten -->
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <div class="opening-hours">
+            <p><span>Montag:</span> 12:00 - 20:00 Uhr</p>
+            <p><span>Dienstag:</span> <strong>Geschlossen</strong></p>
+            <p><span>Mittwoch - Sonntag:</span> 12:00 - 20:00 Uhr</p>
+            <p class="holiday-note">An Feiertagen gelten Sonderöffnungszeiten</p>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="footer-section">
+          <h3>Service</h3>
+          <nav class="footer-links">
+            <a href="impressum.html" aria-current="page">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+            <a href="#" id="open-cookie-settings">Cookie-Einstellungen</a>
+          </nav>
+          <div class="footer-info">
+            <p>✅ Alle Preise inkl. MwSt.</p>
+            <p>🚗 Parkplätze vorhanden</p>
+            <p>📞 Telefonische Bestellungen möglich</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Beate's Grill. Alle Rechte vorbehalten.</p>
+        <p>Preisänderungen vorbehalten • Stand: Januar 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DSGVO Cookie Consent -->
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html> 

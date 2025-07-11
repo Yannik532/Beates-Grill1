@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Speisekarte von Beate's Grill - Currywurst, Schnitzel, Hamburger, Pommes und mehr. Aktuelle Preise und Angebote." />
+  <meta name="keywords" content="Speisekarte, Preise, Currywurst, Schnitzel, Hamburger, Imbiss Lünen" />
+  
+  <title>Speisekarte | Beate's Grill - Aktuelle Preise</title>
+  
+  <!-- Lokale Schriftarten und Styles -->
+  <link rel="stylesheet" href="css/local-fonts.css" />
+  <link rel="stylesheet" href="css/beate-styles.css" />
+  <link rel="stylesheet" href="css/cookie-consent.css" />
+  
+  <style>
+    /* Elegantes Restaurant-Design */
+    :root {
+      --primary-gold: #FF8C00;
+      --primary-gold-light: #FFA500;
+      --primary-gold-dark: #FF7700;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --text-light: #f5f5f5;
+      --text-gold: #FF8C00;
+      --accent-brown: #8B4513;
+      --glass-bg: rgba(26, 26, 26, 0.8);
+      --glass-border: rgba(255, 140, 0, 0.2);
+      --shadow-gold: rgba(255, 140, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header Navigation - Modern Glass Effect */
+    .elegant-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    /* Auto-Hide Navigation */
+    .elegant-header.hidden {
+      transform: translateY(-100%);
+    }
+
+    .elegant-header.scrolled {
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(25px);
+      padding: 0.8rem 0;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo-elegant {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .logo-elegant:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-elegant {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-elegant a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .nav-elegant a:hover,
+    .nav-elegant a.active {
+      color: var(--primary-gold);
+    }
+
+    .nav-elegant a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-elegant a:hover::after,
+    .nav-elegant a.active::after {
+      width: 100%;
+    }
+
+    /* Status Indicator */
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4CAF50;
+      animation: pulse 2s infinite;
+    }
+
+    .status-dot.closed {
+      background: #f44336;
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+
+    /* Logo Section */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(255, 140, 0, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    .header-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .header-status-dot.open {
+      background: #4CAF50;
+    }
+
+    .header-status-dot.closed {
+      background: #f44336;
+    }
+
+    .header-status-text {
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .header-status-text.open {
+      color: #4CAF50;
+    }
+
+    .header-status-text.closed {
+      color: #f44336;
+    }
+
+    /* Hero Section */
+    .hero-elegant {
+      height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('img/optimized/Karte.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      margin-top: 80px;
+      border-bottom: 2px solid rgba(255, 140, 0, 0.3);
+    }
+
+    .hero-content-elegant {
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .hero-title-elegant {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-subtitle-elegant {
+      font-size: 1.2rem;
+      color: var(--primary-gold);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      padding: 6rem 0;
+      background: var(--darker-bg);
+    }
+
+    .container-elegant {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-align: center;
+      color: var(--primary-gold);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-gold);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .menu-category-card {
+      background: var(--dark-bg);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255, 140, 0, 0.1);
+    }
+
+    .category-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-gold);
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .category-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: var(--primary-gold);
+    }
+
+    .menu-items-elegant {
+      list-style: none;
+    }
+
+    .menu-item-elegant {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .menu-item-elegant:last-child {
+      border-bottom: none;
+    }
+
+    .menu-item-elegant:hover {
+      background: rgba(255, 140, 0, 0.05);
+      padding-left: 1rem;
+      border-radius: 8px;
+    }
+
+    .item-name {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .item-price {
+      font-size: 1.2rem;
+      color: var(--primary-gold);
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .item-description {
+      font-size: 0.9rem;
+      color: rgba(245, 245, 245, 0.7);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Price Note */
+    .price-note {
+      background: var(--dark-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      margin: 4rem 0;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    .price-note p {
+      color: rgba(245, 245, 245, 0.7);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer-elegant {
+      background: var(--darker-bg);
+      padding: 4rem 0 1rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.2);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--primary-gold);
+    }
+
+    .footer-contact p,
+    .opening-hours p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact strong {
+      color: var(--primary-gold);
+    }
+
+    .footer-contact a,
+    .footer-bottom a {
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover,
+    .footer-bottom a:hover {
+      color: #FFA500;
+    }
+
+    .opening-hours span {
+      font-weight: 600;
+      color: var(--primary-gold);
+      display: inline-block;
+      min-width: 120px;
+    }
+
+    .holiday-note {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-gold);
+    }
+
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0.3rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--primary-gold);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+
+    .footer-info p {
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.1);
+      color: rgba(245, 245, 245, 0.7);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.3rem;
+      }
+
+      .opening-hours span {
+        min-width: 100px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        text-align: center;
+      }
+
+      .footer-contact {
+        text-align: center;
+      }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary-gold);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(26, 26, 26, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      background: var(--primary-gold);
+      color: var(--dark-bg);
+      transform: scale(1.05);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: var(--primary-gold);
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-elegant {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .hero-title-elegant {
+        font-size: 2.5rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .menu-category-card {
+        padding: 2rem;
+        /* Deaktiviere komplexe Animationen auf Mobile */
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .menu-category-card:nth-child(n) {
+        transition-delay: 0s;
+      }
+
+      /* Vereinfachte Hover-Effekte auf Mobile */
+      .menu-category-card:hover {
+        transform: none;
+        box-shadow: 0 10px 20px rgba(255, 140, 0, 0.1);
+      }
+
+      .menu-item-elegant:hover {
+        background: rgba(255, 140, 0, 0.03);
+        padding-left: 0.5rem;
+      }
+
+      /* Reduzierte Scroll-Animationen */
+      .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .header-content {
+        padding: 0 1rem;
+      }
+
+      .container-elegant {
+        padding: 0 1rem;
+      }
+
+      .header-status-indicator {
+        display: none;
+      }
+    }
+
+    /* Performance-Optimierung für langsame Geräte */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Scroll animations - vereinfacht */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Menu Card Animations - vereinfacht */
+    .menu-category-card {
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .menu-category-card.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Reduzierte Staggered animation delays */
+    .menu-category-card:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .menu-category-card:nth-child(2) {
+      transition-delay: 0.15s;
+    }
+
+    .menu-category-card:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .menu-category-card:nth-child(4) {
+      transition-delay: 0.25s;
+    }
+
+    .menu-category-card:nth-child(5) {
+      transition-delay: 0.3s;
+    }
+
+    .menu-category-card:nth-child(6) {
+      transition-delay: 0.35s;
+    }
+
+    .menu-category-card:nth-child(7) {
+      transition-delay: 0.4s;
+    }
+
+    .menu-category-card:nth-child(8) {
+      transition-delay: 0.45s;
+    }
+
+    .menu-category-card:nth-child(9) {
+      transition-delay: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="elegant-header">
+    <div class="header-content">
+      <div class="logo-section">
+        <a href="index.html" class="logo-elegant">Beate's Grill</a>
+        <div class="header-status-indicator" id="headerStatusIndicator">
+          <div class="header-status-dot" id="headerStatusDot"></div>
+          <span class="header-status-text" id="headerStatusText">Wird geladen...</span>
+        </div>
+      </div>
+      <nav class="nav-elegant">
+        <a href="index.html">Home</a>
+        <a href="speisekarte.html" class="active">Speisekarte</a>
+        <a href="gesellschaftsraum.html">Gesellschaftsraum</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="toggleMobileMenu()" aria-label="Menü schließen">✕</button>
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="speisekarte.html" class="active" onclick="toggleMobileMenu()">Speisekarte</a>
+    <a href="gesellschaftsraum.html" onclick="toggleMobileMenu()">Gesellschaftsraum</a>
+    <a href="kontakt.html" onclick="toggleMobileMenu()">Kontakt</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-elegant">
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <div class="container-elegant">
+      <h1 class="section-title">Unsere Speisekarte</h1>
+      <p style="text-align: center; font-size: 1.2rem; color: var(--primary-gold); margin-bottom: 4rem; font-weight: 300; letter-spacing: 1px;">Klassiker und Snacks – unsere Auswahl im Überblick</p>
+      
+      <div class="menu-grid">
+        <!-- Angebote -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Angebote</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Nackensteak mit Pommes & Salatbeilage</div>
+                <div class="item-description">Menü</div>
+              </div>
+              <span class="item-price">12,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Schaschlik mit Pommes & Salatbeilage</div>
+                <div class="item-description">Angebot</div>
+              </div>
+              <span class="item-price">12,60 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Filetspieß mit Pommes & Salatbeilage</div>
+                <div class="item-description">Menü</div>
+              </div>
+              <span class="item-price">13,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Grillteller</div>
+                <div class="item-description">Nackensteak, Filetspieß, Kräuterbutter, Pommes</div>
+              </div>
+              <span class="item-price">18,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Feuerspieß mit Paprikasoße</div>
+                <div class="item-description">mit Paprikasoße, Pommes, Reis oder Kroketten</div>
+              </div>
+              <span class="item-price">8,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Rippchen mit Soße, Pommes & Krautsalat</div>
+                <div class="item-description">mit Soße, Pommes, Krautsalat</div>
+              </div>
+              <span class="item-price">16,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">6er Nuggets mit Pommes</div>
+                <div class="item-description">mit Pommes</div>
+              </div>
+              <span class="item-price">9,70 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hähnchenschnitzel mit Pommes</div>
+                <div class="item-description">mit Pommes</div>
+              </div>
+              <span class="item-price">8,30 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hausgemachte Schnitzel -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Hausgemachte Schnitzel</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Schnitzel "Wiener Art"</div>
+                <div class="item-description">paniert</div>
+              </div>
+              <span class="item-price">9,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hollandaise-Schnitzel</div>
+                <div class="item-description">mit Hollandaise</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Curryschnitzel</div>
+                <div class="item-description">mit Currysauce</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Jägerschnitzel</div>
+                <div class="item-description">mit Jägersoße</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Paprikaschnitzel</div>
+                <div class="item-description">mit Paprikasoße</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Zwiebelschnitzel</div>
+                <div class="item-description">mit Zwiebeln</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Spargelschnitzel</div>
+                <div class="item-description">mit Spargel</div>
+              </div>
+              <span class="item-price">11,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hawaiischnitzel</div>
+                <div class="item-description">mit Ananas und Käse</div>
+              </div>
+              <span class="item-price">11,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Schlemmerschnitzel</div>
+                <div class="item-description">Schnitzel</div>
+              </div>
+              <span class="item-price">11,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Broccolischnitzel</div>
+                <div class="item-description">mit Broccoli</div>
+              </div>
+              <span class="item-price">11,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hähnchenschnitzel</div>
+                <div class="item-description">Hähnchenfleisch</div>
+              </div>
+              <span class="item-price">5,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Knüstchen</div>
+                <div class="item-description">Spezialität</div>
+              </div>
+              <span class="item-price">12,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Erbsen & Möhren (Schnitzel)</div>
+                <div class="item-description">mit Gemüse</div>
+              </div>
+              <span class="item-price">12,50 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Gerichte vom Schwein -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Gerichte vom Schwein</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Nackensteak</div>
+                <div class="item-description">gegrillt</div>
+              </div>
+              <span class="item-price">6,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Filetspieß</div>
+                <div class="item-description">Filetstücke am Spieß</div>
+              </div>
+              <span class="item-price">9,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Rippchen</div>
+                <div class="item-description">mariniert</div>
+              </div>
+              <span class="item-price">10,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Grillteller</div>
+                <div class="item-description">Gemischte Grillspezialitäten</div>
+              </div>
+              <span class="item-price">18,90 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Gyros-Spezialitäten -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Gyros-Spezialitäten</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Gyrosteller</div>
+                <div class="item-description">Tsatsiki, Krautsalat, Zwiebeln, Pommes oder Reis</div>
+              </div>
+              <span class="item-price">13,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Taxiteller</div>
+                <div class="item-description">Currywurst, Gyros, Zwiebeln, Pommes oder Reis</div>
+              </div>
+              <span class="item-price">11,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Gyros mit Zwiebeln</div>
+                <div class="item-description">Gyros, Zwiebeln</div>
+              </div>
+              <span class="item-price">6,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Gyros Pita</div>
+                <div class="item-description">im Fladenbrot</div>
+              </div>
+              <span class="item-price">6,90 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Imbiss-Spezialitäten -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Imbiss-Spezialitäten</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Pommes</div>
+                <div class="item-description">Goldgelb und knusprig</div>
+              </div>
+              <span class="item-price">2,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Kroketten</div>
+                <div class="item-description">Kartoffelkroketten</div>
+              </div>
+              <span class="item-price">3,20 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Reis</div>
+                <div class="item-description">Langkornreis</div>
+              </div>
+              <span class="item-price">3,20 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Currywurst</div>
+                <div class="item-description">Currywurst</div>
+              </div>
+              <span class="item-price">3,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Jägerwurst</div>
+                <div class="item-description">mit Jägersoße</div>
+              </div>
+              <span class="item-price">3,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Bratwurst</div>
+                <div class="item-description">Bratwurst</div>
+              </div>
+              <span class="item-price">2,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Paprikawurst</div>
+                <div class="item-description">Paprikawurst</div>
+              </div>
+              <span class="item-price">3,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Zwiebelwurst</div>
+                <div class="item-description">mit Zwiebeln</div>
+              </div>
+              <span class="item-price">3,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Frikadelle</div>
+                <div class="item-description">Frikadelle</div>
+              </div>
+              <span class="item-price">3,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Feuerspieß</div>
+                <div class="item-description">scharf</div>
+              </div>
+              <span class="item-price">5,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">½ Hähnchen</div>
+                <div class="item-description">Hähnchen</div>
+              </div>
+              <span class="item-price">6,50 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fast Food -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Fast Food</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hamburger</div>
+                <div class="item-description">Saftig und frisch belegt</div>
+              </div>
+              <span class="item-price">5,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Cheeseburger</div>
+                <div class="item-description">Mit geschmolzenem Käse</div>
+              </div>
+              <span class="item-price">5,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Chickenburger</div>
+                <div class="item-description">Knuspriges Hähnchen</div>
+              </div>
+              <span class="item-price">6,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Chicken Nuggets</div>
+                <div class="item-description">Knusprig paniert</div>
+              </div>
+              <span class="item-price">4,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Chicken Wings (6 St.)</div>
+                <div class="item-description">Würzig mariniert</div>
+              </div>
+              <span class="item-price">6,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Hot-Dog</div>
+                <div class="item-description">Klassisch amerikanisch</div>
+              </div>
+              <span class="item-price">3,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Fleischkroketten</div>
+                <div class="item-description">Hausgemacht</div>
+              </div>
+              <span class="item-price">1,50 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Salate & Beilagen -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Salate & Beilagen</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Diverse Salate klein</div>
+                <div class="item-description">Salat klein</div>
+              </div>
+              <span class="item-price">3,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Diverse Salate groß</div>
+                <div class="item-description">Salat groß</div>
+              </div>
+              <span class="item-price">7,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Tsatsiki klein</div>
+                <div class="item-description">Tsatsiki klein</div>
+              </div>
+              <span class="item-price">2,50 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Tsatsiki</div>
+                <div class="item-description">Tsatsiki</div>
+              </div>
+              <span class="item-price">4,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Bigos</div>
+                <div class="item-description">Sauerkraut</div>
+              </div>
+              <span class="item-price">6,90 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Kartoffel-Wedges</div>
+                <div class="item-description">Kartoffel-Wedges</div>
+              </div>
+              <span class="item-price">3,50 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Saucen -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Saucen</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Salatmayonnaise, Ketchup oder Schaschliksoße</div>
+                <div class="item-description">Salatmayonnaise, Ketchup, Schaschliksoße</div>
+              </div>
+              <span class="item-price">1,00 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Currysauce, Jägersoße, Paprikasoße oder Hollandaise</div>
+                <div class="item-description">Currysauce, Jägersoße, Paprikasoße, Hollandaise</div>
+              </div>
+              <span class="item-price">1,50 €</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Getränke -->
+        <div class="menu-category-card">
+          <h2 class="category-title">Getränke</h2>
+          <ul class="menu-items-elegant">
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Coca-Cola, Cola light</div>
+                <div class="item-description">Cola, Cola light</div>
+              </div>
+              <span class="item-price">2,70 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Cola Zero</div>
+                <div class="item-description">Cola Zero</div>
+              </div>
+              <span class="item-price">2,70 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Fanta, Sprite, Mezzo Mix</div>
+                <div class="item-description">Fanta, Sprite, Mezzo Mix</div>
+              </div>
+              <span class="item-price">2,70 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Mineralwasser</div>
+                <div class="item-description">Mineralwasser</div>
+              </div>
+              <span class="item-price">2,70 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Multivitamin</div>
+                <div class="item-description">Multivitamin</div>
+              </div>
+              <span class="item-price">2,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Bier, Radler</div>
+                <div class="item-description">Bier, Radler</div>
+              </div>
+              <span class="item-price">2,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Kakao</div>
+                <div class="item-description">Kakao</div>
+              </div>
+              <span class="item-price">1,80 €</span>
+            </li>
+            <li class="menu-item-elegant">
+              <div>
+                <div class="item-name">Capri-Sonne</div>
+                <div class="item-description">Capri-Sonne</div>
+              </div>
+              <span class="item-price">1,80 €</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Price Note -->
+      <div class="price-note fade-in">
+        <p><em>Alle Preise inkl. MwSt. Preisänderungen vorbehalten. Stand: Januar 2025</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-elegant">
+    <div class="container-elegant">
+      <div class="footer-grid">
+        <!-- Kontakt -->
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <div class="footer-contact">
+            <p><strong>Beate's Grill</strong></p>
+            <p>Bebelstraße 66<br>44532 Lünen</p>
+            <p>Tel: <a href="tel:+49230614619">+49 2306 14619</a></p>
+            <p>E-Mail: <a href="mailto:info@beates-grill.de">info@beates-grill.de</a></p>
+            <p>Web: <a href="http://beates-grill.de" target="_blank" rel="noopener">beates-grill.de</a></p>
+          </div>
+        </div>
+
+        <!-- Öffnungszeiten -->
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <div class="opening-hours">
+            <p><span>Montag:</span> 12:00 - 20:00 Uhr</p>
+            <p><span>Dienstag:</span> <strong>Geschlossen</strong></p>
+            <p><span>Mittwoch - Sonntag:</span> 12:00 - 20:00 Uhr</p>
+            <p class="holiday-note">An Feiertagen gelten Sonderöffnungszeiten</p>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="footer-section">
+          <h3>Service</h3>
+          <nav class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+            <a href="#" id="open-cookie-settings">Cookie-Einstellungen</a>
+          </nav>
+          <div class="footer-info">
+            <p>✅ Alle Preise inkl. MwSt.</p>
+            <p>🚗 Parkplätze vorhanden</p>
+            <p>📞 Telefonische Bestellungen möglich</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Beate's Grill. Alle Rechte vorbehalten.</p>
+        <p>Preisänderungen vorbehalten • Stand: Januar 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Performance Check
+    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Aktiviere Animationen nur auf Desktop für bessere Performance
+    if (!isMobile) {
+      // Menu card animations
+      const menuObserverOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const menuObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, menuObserverOptions);
+
+      // Observe menu cards nur auf Desktop
+      document.querySelectorAll('.menu-category-card').forEach(card => {
+        menuObserver.observe(card);
+      });
+
+      // Regular scroll animations nur auf Desktop
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    } else {
+      // Auf Mobile: Zeige alle Elemente sofort ohne Animationen
+      document.querySelectorAll('.menu-category-card').forEach(card => {
+        card.classList.add('animate-in');
+      });
+      document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.add('visible');
+      });
+    }
+
+    // Mobile menu functionality
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (mobileNav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const mobileNav = document.getElementById('mobileNav');
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuToggle.contains(e.target)) {
+        toggleMobileMenu();
+      }
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+
+    // Opening hours status
+    function updateOpenStatus() {
+      const now = new Date();
+      const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const currentTime = hours * 60 + minutes; // Current time in minutes since midnight
+
+      const statusDot = document.getElementById('headerStatusDot');
+      const statusText = document.getElementById('headerStatusText');
+
+      let isOpen = false;
+      let statusMessage = '';
+
+      // Opening hours: Monday 12:00-20:00, Tuesday closed, Wednesday-Sunday 12:00-20:00
+      if (day === 2) { // Tuesday
+        statusMessage = 'Geschlossen';
+        isOpen = false;
+      } else if (day === 1 || (day >= 3 && day <= 7) || day === 0) { // Monday or Wednesday-Sunday
+        const openTime = 12 * 60; // 12:00 in minutes
+        const closeTime = 20 * 60; // 20:00 in minutes
+
+        if (currentTime >= openTime && currentTime < closeTime) {
+          statusMessage = 'Geöffnet';
+          isOpen = true;
+        } else if (currentTime < openTime) {
+          statusMessage = 'Öffnet um 12:00';
+          isOpen = false;
+        } else {
+          statusMessage = 'Geschlossen';
+          isOpen = false;
+        }
+      }
+
+      // Update status indicator
+      if (isOpen) {
+        statusDot.className = 'header-status-dot open';
+        statusText.className = 'header-status-text open';
+      } else {
+        statusDot.className = 'header-status-dot closed';
+        statusText.className = 'header-status-text closed';
+      }
+
+      statusText.textContent = statusMessage;
+    }
+
+    // Update status immediately and then every minute
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000);
+
+    // ======================================================================
+    // ULTRA-MODERNE NAVIGATION SCROLL-EFFEKTE
+    // ======================================================================
+    
+    // Ultra-moderne Navigation Scroll-Effekte
+    class ModernNavigation {
+      constructor() {
+        this.header = document.querySelector('.elegant-header');
+        this.logo = document.querySelector('.logo-elegant');
+        this.navLinks = document.querySelectorAll('.nav-elegant a');
+        this.lastScrollY = window.scrollY;
+        this.init();
+      }
+
+      init() {
+        // Scroll-basierte Effekte
+        window.addEventListener('scroll', () => this.handleScroll());
+        
+        // Logo data-text für Glow-Effekt
+        if (this.logo) {
+          this.logo.setAttribute('data-text', this.logo.textContent);
+        }
+        
+        // Navigation Links Hover-Sound (optional)
+        this.navLinks.forEach(link => {
+          link.addEventListener('mouseenter', () => this.playHoverSound());
+        });
+        
+        // Active Link Detection
+        this.updateActiveLink();
+        
+        // Mobile Menu Toggle (falls vorhanden)
+        this.initMobileMenu();
+      }
+
+      handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        // Header Styling basierend auf Scroll-Position
+        if (currentScrollY > 100) {
+          this.header.classList.add('scrolled');
+        } else {
+          this.header.classList.remove('scrolled');
+        }
+        
+        // Auto-Hide Navigation
+        if (currentScrollY > this.lastScrollY && currentScrollY > 200) {
+          this.header.classList.add('hidden');
+        } else {
+          this.header.classList.remove('hidden');
+        }
+        
+        this.lastScrollY = currentScrollY;
+      }
+
+      playHoverSound() {
+        // Subtiler Hover-Sound (optional)
+        try {
+          const audio = new Audio('data:audio/wav;base64,UklGRl4DAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQBAADAwODQ4NDg0ODQ4NDg0ODQ4NDg0NTQ1NDU0NDQ0NDQ0NDQ1NDU0NDQwMDgwODQ4NDg0ODQ4NDg0ODQ4NDg0ODQ4NDg0ODQ4PDg8ODw');
+          audio.volume = 0.1;
+          audio.play().catch(() => {}); // Ignore errors
+        } catch (e) {}
+      }
+
+      updateActiveLink() {
+        const currentPath = window.location.pathname;
+        this.navLinks.forEach(link => {
+          const linkPath = new URL(link.href).pathname;
+          if (linkPath === currentPath || (currentPath === '/' && linkPath.includes('index'))) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      initMobileMenu() {
+        // Mobile Menu Toggle (falls ein Burger-Button existiert)
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.nav-elegant');
+        
+        if (mobileToggle && nav) {
+          mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+          });
+        }
+      }
+    }
+
+    // Initialisierung nach DOM-Load
+    document.addEventListener('DOMContentLoaded', () => {
+      new ModernNavigation();
+      
+      // Status Indicator Animation
+      const statusDot = document.querySelector('.header-status-dot');
+      if (statusDot) {
+        setInterval(() => {
+          statusDot.style.transform = statusDot.style.transform === 'scale(1.2)' ? 'scale(1)' : 'scale(1.2)';
+        }, 2000);
+      }
+    });
+  </script>
+  
+  <!-- DSGVO Cookie Consent -->
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html>

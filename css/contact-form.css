@@ -1,0 +1,450 @@
+/**
+ * DSGVO-konformes Kontaktformular Styles
+ * Beate's Grill - Lokale Styles für Kontaktformular
+ */
+
+/* ===== CONTACT FORM CONTAINER ===== */
+.contact-form-section {
+  background: var(--darker-bg);
+  padding: 4rem 0;
+  position: relative;
+}
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-form-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+}
+
+.contact-form-header p {
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ===== FORM STYLES ===== */
+.contact-form {
+  background: var(--dark-bg);
+  padding: 3rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group label .required {
+  color: var(--primary-gold);
+  margin-left: 0.25rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(245, 245, 245, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-gold);
+  background: rgba(255, 140, 0, 0.05);
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(245, 245, 245, 0.5);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* ===== FIELD VALIDATION ===== */
+.form-input.field-invalid,
+.form-textarea.field-invalid {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.field-error {
+  margin-top: 0.5rem;
+  color: #ef4444;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.field-error span {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.field-error span:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== CHECKBOX STYLES ===== */
+.checkbox-group {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 140, 0, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 8px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--primary-gold);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.checkbox-label {
+  color: var(--text-light);
+  line-height: 1.5;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.checkbox-label a {
+  color: var(--primary-gold);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.checkbox-label a:hover {
+  color: var(--primary-gold-light);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.form-submit {
+  width: 100%;
+  background: var(--primary-gold);
+  color: var(--dark-bg);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-submit:hover:not(:disabled) {
+  background: var(--primary-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+.form-submit:disabled {
+  background: rgba(255, 140, 0, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== LOADING SPINNER ===== */
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--dark-bg);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== FORM MESSAGES ===== */
+.form-message {
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid;
+  animation: slideInDown 0.3s ease-out;
+}
+
+.form-message--success {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: #10b981;
+  color: #10b981;
+}
+
+.form-message--error {
+  background: rgba(239, 68, 68, 0.1);
+  border-left-color: #ef4444;
+  color: #ef4444;
+}
+
+.form-message--warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-left-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.form-message--info {
+  background: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.form-message-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-message-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.form-message-text {
+  line-height: 1.5;
+}
+
+.form-message.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== CONTACT INFO SECTION ===== */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.contact-info-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 140, 0, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.contact-info-icon {
+  font-size: 2rem;
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.contact-info-title {
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-info-details {
+  color: rgba(245, 245, 245, 0.8);
+  line-height: 1.5;
+}
+
+.contact-info-details a {
+  color: var(--primary-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-details a:hover {
+  color: var(--primary-gold-light);
+  text-decoration: underline;
+}
+
+/* ===== GDPR NOTICE ===== */
+.gdpr-notice {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: rgba(245, 245, 245, 0.8);
+  line-height: 1.5;
+}
+
+.gdpr-notice h4 {
+  color: #3b82f6;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.gdpr-notice ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.gdpr-notice li {
+  margin-bottom: 0.25rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 0 1rem;
+  }
+
+  .contact-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-form-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .checkbox-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .checkbox-input {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-submit {
+    font-size: 16px; /* Verhindert Zoom auf iOS */
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .form-message,
+  .loading-spinner {
+    animation: none;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-submit,
+  .contact-info-item {
+    transition: none;
+  }
+}
+
+/* Focus indicators */
+.form-input:focus,
+.form-textarea:focus,
+.form-submit:focus,
+.checkbox-input:focus {
+  outline: 2px solid var(--primary-gold);
+  outline-offset: 2px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .contact-form {
+    border-width: 2px;
+  }
+
+  .form-input,
+  .form-textarea {
+    border-width: 2px;
+  }
+
+  .checkbox-group {
+    border-width: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .contact-form-section {
+    background: white;
+    color: black;
+  }
+
+  .contact-form {
+    border: 2px solid black;
+    box-shadow: none;
+  }
+
+  .form-submit {
+    display: none;
+  }
+}
