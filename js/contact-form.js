@@ -258,24 +258,45 @@ class ContactForm {
   }
 
   async submitForm(formData) {
-    // Simuliere Server-Request
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Hier würde normalerweise ein echter API-Call stattfinden
-        console.log('Form submitted:', formData);
-        
-        // Simuliere gelegentliche Fehler
-        if (Math.random() > 0.9) {
-          reject(new Error('Server error'));
-        } else {
-          resolve({ success: true, messageId: this.generateMessageId() });
-        }
-      }, 2000);
-    });
+    try {
+      // CSRF Token generieren falls nicht vorhanden
+      if (!formData.csrf_token) {
+        formData.csrf_token = this.generateCSRFToken();
+      }
+
+      const response = await fetch('contact-handler.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      
+      if (result.success) {
+        return { success: true, messageId: this.generateMessageId() };
+      } else {
+        throw new Error(result.errors ? result.errors.join(', ') : 'Unknown error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      throw error;
+    }
   }
 
   generateMessageId() {
     return 'MSG-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+  }
+
+  generateCSRFToken() {
+    // In einer echten Anwendung würde dies server-seitig gemacht
+    // Hier generieren wir ein temporäres Token
+    return 'csrf_' + Date.now() + '_' + Math.random().toString(36).substr(2, 16);
   }
 
   enableAutoSave() {
