@@ -319,31 +319,12 @@
   <!-- DSGVO Cookie Consent -->
   <script src="js/cookie-consent.js"></script>
   <script>
-    class ModernNavigation {
-      constructor() {
-        this.header = document.querySelector('.header');
-        this.lastScrollY = window.scrollY;
-        this.init();
+    // Initialize the main app
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof BeateGrillApp !== 'undefined') {
+        new BeateGrillApp();
       }
-      init() {
-        window.addEventListener('scroll', () => this.handleScroll());
-      }
-      handleScroll() {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > 100) {
-          this.header.classList.add('scrolled');
-        } else {
-          this.header.classList.remove('scrolled');
-        }
-        if (currentScrollY > this.lastScrollY && currentScrollY > 200) {
-          this.header.classList.add('hidden');
-        } else {
-          this.header.classList.remove('hidden');
-        }
-        this.lastScrollY = currentScrollY;
-      }
-    }
-    new ModernNavigation();
+    });
   </script>
 </body>
 </html>

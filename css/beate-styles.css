@@ -343,7 +343,7 @@ body {
 }
 
 .nav--mobile.active {
-  display: flex;
+  display: flex !important;
   opacity: 1;
   transform: translateY(0);
 }
